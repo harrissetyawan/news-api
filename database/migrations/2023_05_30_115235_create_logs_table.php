@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('news_id')->constrained('news');
+            $table->foreignId('news_id')->constrained('news', 'id');
             $table->enum('action', ['completed', 'updated', 'deleted']);
             $table->timestamps();
         });
