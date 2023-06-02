@@ -27,15 +27,9 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-        User::factory(3)->create();
-        News::factory(3)->create();
-        Comments::create([
-            'user_id' => 2,
-            'news_id' => 3,
-            'comment' => 'Mantap Banget Nich!',
-            'created_at' => now(),
-            'updated_at' => now(),
+        User::factory(7)->create();
+        News::factory(5)->create();
 
-        ]);
+        Comments::factory(5)->create();
     }
 }

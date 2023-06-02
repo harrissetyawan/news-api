@@ -18,9 +18,9 @@ class CommentsFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => mt_rand(1, 3),
-            'news_id' => mt_rand(1, 3),
-            'comment' => fake()->sentences(mt_rand(1, 2)),
+            'user_id' => mt_rand(1, 7),
+            'news_id' => mt_rand(1, 5),
+            'comment' => fake()->sentences(mt_rand(1, 4), true),
             'created_at' => now(),
             'updated_at' => now()
         ];
