@@ -27,8 +27,8 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-        User::factory(7)->create();
-        News::factory(5)->create();
+        User::factory(10)->create();
+        News::factory(14)->create();
 
         Comments::factory(5)->create();
     }

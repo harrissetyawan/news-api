@@ -16,11 +16,12 @@ class NewsFactory extends Factory
      */
     public function definition(): array
     {
+        $imagePath = fake()->image('public/storage/images', 640, 480, null, false);
+        $imageName = basename($imagePath);
         return [
-            //
             'title' => fake()->words(mt_rand(3, 5), true),
-            'content' => fake()->paragraphs(mt_rand(3, 6), true),
-            'img' => fake()->image('public/storage/images', 640, 480),
+            'content' => fake()->paragraphs(mt_rand(3, 8), true),
+            'img' => $imageName,
             'user_id' => 1,
             'created_at' => now(),
             'updated_at' => now()

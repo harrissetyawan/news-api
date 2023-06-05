@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Laravel\Passport\TokenRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -23,7 +22,7 @@ class AuthController extends Controller
             $token = $user->createToken($tokenLabel)->accessToken;
             $isAdmin = $user->admin;
 
-            return response()->json(['token' => $token, 'isAdmin' => $isAdmin], 200);
+            return response()->json(['token' => $token, 'isAdmin' => $isAdmin], 200)->header('Authorization', 'Bearer ' . $token);
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
